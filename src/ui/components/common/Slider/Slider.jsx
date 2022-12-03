@@ -34,7 +34,7 @@ export const Slider = React.memo(props => {
              <span className={s.placeholderText}>{placeholderText}</span>  
              <div className={s.contentWrapper}>
                  <img src={left} className={s.img} alt='left' onClick={onClickLeft}/>
-                 <span>{value}</span> 
+                 <span className={s.span}>{value}</span> 
                  <img src={right} className={s.img} alt='rigth' onClick={onClickRight}/>
              </div>       
        </div>

@@ -1,0 +1,16 @@
+.wrapper {
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+.parameter {
+  font-size: 1.2rem;
+}
+.parameterValue {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.border {
+  border-bottom: 1px solid #E5E5E5;
+}

@@ -1,0 +1,70 @@
+.wrapper {
+    width: 100%;
+    background-color: white;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+}
+.arrowBlock {
+    width: 5%;
+    height: 100%;
+    background-color: #D1E2ED;
+    position: relative;
+}
+.detailBlock {
+    width:50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.2rem 0 0.2rem rgb(0 0 0 / 20%);
+    position: relative;
+}
+.arrowRight {
+    position: absolute;
+    top: 43%;
+    left: 97.5%;
+    width: 52px;
+    height: 100px;
+}
+.chartBlock {
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.chart {
+    background-color: #1A3343;
+    width: 90%;
+    height: 100%;
+}
+.detailBlock {
+    width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.detail {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 45%;
+}
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.rowWrapper {
+    widows: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
