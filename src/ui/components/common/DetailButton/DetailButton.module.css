@@ -1,0 +1,18 @@
+.btn {
+  background-color: #284D64;
+  min-height: 54px;
+  min-width: 180px;
+  border: none;
+  color: white;
+  font-size: 130%;
+  border-radius: 10px;
+  white-space: pre;
+}
+.btn:hover {
+  background-color: #19435d;
+  border-color: #19435d;
+}
+.btn:disabled {
+  background-color: #c4c4c4;
+  border-color: #c4c4c4;
+}

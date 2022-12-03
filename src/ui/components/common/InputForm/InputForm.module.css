@@ -1,0 +1,49 @@
+.inputWrapper {
+position: relative;
+width:100%;
+background-color: 'red';
+}
+.inputForm {
+  display: block; 
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-clip: padding-box;
+  border: 1px solid #A3A3B2;
+  border-radius: 10px;
+  height: 50px;
+  padding: 10px;
+  width: 95%;
+}
+.inputFormError {
+  display: block; 
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-clip: padding-box;
+  border: 1px solid rgb(225, 5, 0);
+  border-radius: 10px;
+  height: 50px;
+  padding: 10px;
+  width: 95%;
+  box-shadow: 0 0 10px 10px rgba(255, 5, 0, 0.2);
+}
+.inputForm:focus {
+  border: 2px solid #A3A3B2;
+  outline: 0; 
+}
+.eye {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 20%;
+  right: 5%;
+}
+.formError {
+  color: #E10500;
+  position: absolute;
+  top: 95%;
+  left: 2%;
+}

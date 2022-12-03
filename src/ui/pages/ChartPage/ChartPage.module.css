@@ -1,0 +1,86 @@
+.wrapper {
+    width: 100%;
+    background-color: white;
+}
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+}
+.inputDataBlock {
+    width: 30%;
+    height: 100%;
+    background-image: url(../../../assets//images//backSelect.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.chartBlock {
+    width:62%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.2rem 0 0.2rem rgb(0 0 0 / 20%);
+    position: relative;
+}
+.chartWrapper {
+    width:92%;
+    height: 92%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.selectWrapper {
+    width: 60%;
+    height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.arrowRight {
+    position: absolute;
+    top: 43%;
+    left: 97.5%;
+    width: 52px;
+    height: 100px;
+}
+.spansBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.span {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.5;
+    color: black;
+    background-clip: padding-box;
+    border: 1px solid #A3A3B2;
+    border-radius: 10px;
+    height: 50px;
+    padding: 10px;
+    min-width: 250px;
+    background-color: white;
+    box-shadow: 0.2rem 0 0.2rem rgb(0 0 0 / 20%);
+
+}
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.detailBtn {
+    position: absolute;
+    bottom:4%;
+    right:4%
+}

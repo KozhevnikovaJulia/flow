@@ -1,0 +1,49 @@
+.legend {
+  width: 40px;
+  height: 3px;
+  margin-right: 5px;
+  position: relative;
+}
+.legendWrapperNew {
+  width: 49px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+.reachLegend{
+  position: absolute;
+  top: 89%;
+  left: 27.5%
+ }
+ .reachIncrLegend {
+  position: absolute;
+  top: 89%;
+  left: 40.5%
+ }
+ .CPRPIncrLegend {
+  position: absolute;
+  top: 89%;
+  left: 56.5% 
+ }
+@media screen and (max-width: 1500px) {
+  .wrapper { zoom: 130%; }
+  .legendWrapperNew {
+    width: 65px;
+    height: 25px;
+  }
+  .legend {
+    width: 60px;
+  }
+  .reachLegend {
+    left: 21%
+   }
+   .reachIncrLegend {
+    left: 37.5%
+   }
+   .CPRPIncrLegend {
+    left: 58.5% 
+   }
+}
+
