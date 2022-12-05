@@ -17,7 +17,7 @@ export const App = () => {
   const status = useSelector(state => state.app.status);
   const error = useSelector(state => state.app.error);
   const isInitialized = useSelector(state => state.app.isInitialized);
-  console.log(isInitialized)
+  console.log(error)
 
   useEffect(() => {
     error !== null && setErrorWarning(true);

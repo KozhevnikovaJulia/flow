@@ -9,13 +9,33 @@ import { signIn } from '../../../bll/app_reducer';
 import { useHistory } from 'react-router-dom';
 import { Header } from '../../components/Header/Header';
 import lock from '../../../assets/images/lock.png';
+import { usersData } from '../../../assets/data/users';
 
 export const SigninPage = () => {
   const isInitialized = useSelector(state => state.app.isInitialized);
-  const [formErrorWarning, setFormErrorWarning] = useState(false);
+  const [loginEmptyWarning, setLoginEmptyWarning] = useState(false);
+  const [passwordSentToEmail, setPasswordSentToEmail] = useState(false);
   const [type, setType] = useState('password');
   const dispatch = useDispatch();
   const history = useHistory();
+
+  const onClickRestorePassword = (email) => {
+    const correctEmail = usersData.find(item => item.userEmail === email );
+    const currentPassword =  correctEmail ? correctEmail.userPassword  : null
+    if(!email || !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email) || !correctEmail) {
+      setLoginEmptyWarning(true)
+    } else {
+      setPasswordSentToEmail(true)
+    }
+  }
+  const findLinkClass = (email) => {
+    const correctEmail = usersData.find(item => item.userEmail === email );
+    if(!email || !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email) || !correctEmail) {
+      return s.linkDisabled
+    } else {
+      return s.link
+    }
+  }
 
   useEffect(() => {
     isInitialized && history.push('/');
@@ -57,15 +77,17 @@ export const SigninPage = () => {
                       <div className={s.formButtonsWrapper}>
                         <FormButton title={'Войти'} disabled={(!values.email || !values.password || errors.email || errors.password) ? true : false}/>
                       </div> 
-                      <div className={s.formInfoTextWrapper} onClick={()=>{alert('Пароль отправлен на почту')}}>
+                      <div className={s.formInfoTextWrapper} onClick={()=>{onClickRestorePassword(values.email)}}>
                           <img src={lock} className={s.lock} alt='lock'/>
-                          Восстановить пароль
+                          <a id='hyperlink' href="#top" className={findLinkClass(values.email)}>Восстановить пароль</a>                          
                       </div>
                  </form>
                )}
              </Formik>
         </div>
-    </div>       
+    </div>    
+    <Warning text={'Для восстановления пароля необходимо ввести корректный адрес'} warningVisible={loginEmptyWarning} setWarningVisible={setLoginEmptyWarning} />  
+    <Warning text={'Пароль отправлен на почту'} warningVisible={passwordSentToEmail} setWarningVisible={setPasswordSentToEmail} info/> 
 </div>
   );
 };

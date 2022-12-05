@@ -31,7 +31,7 @@ export const setInitialized = isInitialized => ({ type: SET_IS_INITIALIZED, isIn
 //thunk creators
 export const signIn = (userEmail, userPassword) => async dispatch => {
   const currentUser = usersData.find(item => item.userEmail === userEmail && item.userPassword === userPassword);
-  currentUser && dispatch(setInitialized(true));
+  currentUser ? dispatch(setInitialized(true)) : dispatch(setError('Введен неверный логин или пароль'))
 
   localStorage.setItem(
     'app',
