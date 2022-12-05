@@ -70,7 +70,8 @@
     border-radius: 10px;
     height: 50px;
     padding: 10px;
-    min-width: 250px;
+    width:30%;
+    /* min-width: 250px; */
     background-color: white;
     box-shadow: 0.2rem 0 0.2rem rgb(0 0 0 / 20%);
 
@@ -81,6 +82,14 @@
 }
 .detailBtn {
     position: absolute;
-    bottom:4%;
-    right:4%
+    bottom:-13%;
+    right: 0%
+}
+.backBtn {
+    position: absolute;
+    bottom:-13%;
+    left: 0%
+}
+@media screen and (max-width: 1500px) {
+    .wrapper { zoom: 90%; }
 }

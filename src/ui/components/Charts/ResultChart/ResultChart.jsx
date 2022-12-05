@@ -115,11 +115,11 @@ export const ResultChart = React.memo(props => {
       x: {
         title: {
           display: true,
-          align: 'start',
-          text: 'Бюджет (млн. руб)',
+          align: 'center',
+          text: 'Budget level',
           color: 'black',
           font: {
-            size: 13,
+            size: 20,
           },
           padding: 0,
         },
@@ -127,7 +127,7 @@ export const ResultChart = React.memo(props => {
     },
   };
   return (
-    <div style={{ position: 'relative' }} className={s.wrapper}>
+    <div className={s.wrapper}>
       <Line height={350} data={data} options={options} />
     </div>
   );

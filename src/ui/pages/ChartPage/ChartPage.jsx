@@ -19,6 +19,12 @@ export const ChartPage = props => {
   const mediumHrono = useSelector(state => state.input.mediumHrono);
   const maxShareOlv = useSelector(state => state.input.maxShareOlv);
 
+  const taItemsArr = useSelector(state => state.input.taItemsArr);
+  const periodItemsArr = useSelector(state => state.input.periodItemsArr);
+  const frequencyItemsArr = useSelector(state => state.input.frequencyItemsArr);
+  const mediumHronoItemsArr = useSelector(state => state.input.mediumHronoItemsArr);
+  const maxShareOlvItemsArr = useSelector(state => state.input.maxShareOlvItemsArr);
+ 
   const onChangeTa = (newValue) => {
     dispatch(setTa(newValue))
   }
@@ -37,19 +43,25 @@ export const ChartPage = props => {
   const onClickDetail = () => {
     history.push('/detail');
   }
+  const onClickBack = () => {
+    history.push('/home');
+  }
   return (
     <div className={s.wrapper}>
         <Header size={'small'}/>
         <div className={s.content}>
            <div className={s.inputDataBlock}>
                <div className={s.selectWrapper}>
-                   <Select items={['All 25-45 BC', 'W 25-55 BC','M 20-45 BC']} value={ta} onChange={onChangeTa} name={'ta'} placeholderText={'ЦА'}/>
-                   <Select items={['март', 'август', 'октябрь']} value={period} onChange={onChangePeriod} name={'period'} placeholderText={'Период'}/>
-                   <Select items={['1', '2', '3', '4', '5', '6', '7', '8', '9']} value={frequency} onChange={onChangeFrequency} name={'frequency'} placeholderText={'Частрота'}/>
-                   <Slider items={['5', '10', '15', '20', '25', '30']} value={mediumHrono} onChange={onChangeMediumHrono} name={'mediumHrono'} placeholderText={'Средний хронометраж'}/>
-                   <Slider items={['20%', '25%', '30%', '35%', '40%']} value={maxShareOlv} onChange={onChangeMaxShareOlv} name={'maxShareOlv'} placeholderText={'Максимальная доля OLV'}/>
+                   <Select items={taItemsArr} value={ta} onChange={onChangeTa} name={'ta'} placeholderText={'ЦА'}/>
+                   <Select items={periodItemsArr} value={period} onChange={onChangePeriod} name={'period'} placeholderText={'Период'}/>
+                   <Select items={frequencyItemsArr} value={frequency} onChange={onChangeFrequency} name={'frequency'} placeholderText={'Частрота'}/>
+                   <Slider items={mediumHronoItemsArr} value={mediumHrono} onChange={onChangeMediumHrono} name={'mediumHrono'} placeholderText={'Средний хронометраж'}/>
+                   <Slider items={maxShareOlvItemsArr} value={maxShareOlv} onChange={onChangeMaxShareOlv} name={'maxShareOlv'} placeholderText={'Максимальная доля OLV'}/>
                </div>
                <img src={rightArrow} className={s.arrowRight} alt='arrowRight'  /> 
+               <div className={s.backBtn}> 
+                   <DetailButton onClick={onClickBack} title={'Вернуться назад'} isDisabled={false} /> 
+               </div>  
            </div>          
            <div className={s.chartBlock}>
                <div className={s.chartWrapper}>
@@ -61,17 +73,11 @@ export const ChartPage = props => {
                         <span className={s.span}>Total budget: 50 000 000</span>
                    </div>
                </div>
-               {/* <div className={s.title}>Результат</div>
-               <ResultChart/>
-               <div className={s.spansBlock}>
-                    <span className={s.span}>Reach 5+  38%</span>
-                    <span className={s.span}>CPRP 3+ 50 000 руб</span>
-                    <span className={s.span}>Total budget: 50 000 000</span>
-               </div> */}
+               <div className={s.detailBtn}> 
+                   <DetailButton onClick={onClickDetail} title={'Детализация'} isDisabled={false} /> 
+               </div>  
            </div>      
-           <div className={s.detailBtn}> 
-                <DetailButton onClick={onClickDetail} title={'Детализация'} isDisabled={false} /> 
-           </div>               
+             
         </div> 
             
     </div>

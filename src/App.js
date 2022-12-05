@@ -23,11 +23,11 @@ export const App = () => {
     error !== null && setErrorWarning(true);
   }, [error]);
 
-  // useEffect(() => {
-  //   if (!isInitialized) {
-  //     history.push('/signin');
-  //   }
-  // }, [history, isInitialized]);
+  useEffect(() => {
+    if (!isInitialized) {
+      history.push('/signin');
+    }
+  }, [history, isInitialized]);
 
   useEffect(() => {
     dispatch(setStartData());

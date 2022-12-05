@@ -5,9 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-color: #D1E2ED;
+  background-image: url(./assets//images//backPic.png);
+  background-size: cover;
+  background-repeat: no-repeat; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* @media screen and (max-width: 1500px) {
+  body { zoom: 85%; }
+} */

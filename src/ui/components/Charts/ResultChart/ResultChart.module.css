@@ -28,22 +28,6 @@
   left: 56.5% 
  }
 @media screen and (max-width: 1500px) {
-  .wrapper { zoom: 130%; }
-  .legendWrapperNew {
-    width: 65px;
-    height: 25px;
-  }
-  .legend {
-    width: 60px;
-  }
-  .reachLegend {
-    left: 21%
-   }
-   .reachIncrLegend {
-    left: 37.5%
-   }
-   .CPRPIncrLegend {
-    left: 58.5% 
-   }
+  .wrapper { zoom: 110%; }
 }
 

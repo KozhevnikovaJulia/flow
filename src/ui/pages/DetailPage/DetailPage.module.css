@@ -38,6 +38,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 .chart {
     background-color: #1A3343;
@@ -67,4 +68,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+.detailBtn {
+    position: absolute;
+    bottom:-13%;
+    right:5%
+}
+@media screen and (max-width: 1500px) {
+    .wrapper { zoom: 90%; }
 }

@@ -3,20 +3,25 @@ import { useDispatch, useSelector } from 'react-redux';
 import s from './DetailPage.module.css';
 import { Header } from '../../components/Header/Header';
 import { DetailRow } from '../../components/common/DetailRow/DetailRow';
+import { DetailButton } from '../../components/common/DetailButton/DetailButton';
+import { useHistory } from 'react-router-dom';
 import rightArrow from '../../../assets/images/rightArrow.png';
 
 export const DetailPage = React.memo(props => {
   const dispatch = useDispatch();
-
+  const history = useHistory();
   const ta = useSelector(state => state.input.ta);
   const period = useSelector(state => state.input.period);
   const frequency = useSelector(state => state.input.frequency);
   const mediumHrono = useSelector(state => state.input.mediumHrono);
   const maxShareOlv = useSelector(state => state.input.maxShareOlv);
 
+  const onClickBack = () => {
+    history.push('/chart');
+  }
   return (
     <div className={s.wrapper}>
-       <Header size={'big'}/>
+       <Header/>
        <div className={s.content}>
             <div className={s.arrowBlock}>
                  <img src={rightArrow} className={s.arrowRight} alt='arrowRight'  /> 
@@ -43,8 +48,12 @@ export const DetailPage = React.memo(props => {
             </div>      
             <div className={s.chartBlock}>
                 <div className={s.chart}></div>   
-            </div>     
-       </div>         
+                <div className={s.detailBtn}> 
+                    <DetailButton onClick={onClickBack} title={'Вернуться назад'} isDisabled={false} /> 
+                </div>  
+            </div>    
+       </div>     
+    
     </div>
   );
 });

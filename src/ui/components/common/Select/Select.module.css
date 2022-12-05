@@ -38,6 +38,8 @@
   border-radius: 0.15rem;
   max-height: 370px;
   overflow-y: auto;
+  width: 107%;
+  text-align: center;
 }
 .select__list .select__item {
   position: relative;

@@ -15,18 +15,32 @@ const input = sessionStorage.getItem('input')
     ta: '',
     period: '',
     frequency: '',
-    mediumHrono: '15',
-    maxShareOlv: '30%',
+    mediumHrono: '',
+    maxShareOlv: '',
+    taItemsArr: [],
+    periodItemsArr: [],
+    frequencyItemsArr: [],
+    mediumHronoItemsArr: [],
+    maxShareOlvItemsArr: [],
     };
 
 const chart = sessionStorage.getItem('chart')
   ? JSON.parse(sessionStorage.getItem('chart'))
   : {
     allDataFromBack:[],
-    chartData:[]
+    chartData:[],
+    selectedValue:''
     };
 
-const persistedState = { input, chart };
+const app = sessionStorage.getItem('app')
+  ? JSON.parse(sessionStorage.getItem('app'))
+  : {
+    status: 'success',
+    error: null,
+    isInitialized: false,
+    };
+
+const persistedState = { input, chart, app };
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -35,4 +49,5 @@ export const store = createStore(rootReducer, persistedState, composeEnhancers(a
 store.subscribe(() => {
   sessionStorage.setItem('input', JSON.stringify(store.getState().input));
   sessionStorage.setItem('chart', JSON.stringify(store.getState().chart));
+  sessionStorage.setItem('app', JSON.stringify(store.getState().app));
 });
